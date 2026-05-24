@@ -199,14 +199,38 @@ export default function Home() {
           style={{ objectFit: "cover", objectPosition: "center" }}
           priority
         />
-        {/* Warm overlay */}
+        {/* Warm overlay — stronger for text legibility */}
         <div
           style={{
             position: "absolute",
             inset: 0,
-            background: "linear-gradient(160deg, rgba(250,245,240,0.82) 0%, rgba(200,155,110,0.55) 50%, rgba(125,90,79,0.65) 100%)",
+            background: "linear-gradient(160deg, rgba(250,245,240,0.93) 0%, rgba(240,220,195,0.88) 45%, rgba(160,110,80,0.78) 100%)",
           }}
         />
+
+        {/* Logo — top-left absolute */}
+        <div
+          style={{
+            position: "absolute",
+            top: "28px",
+            left: "32px",
+            zIndex: 2,
+          }}
+        >
+          <Image
+            src="/logo_w.png"
+            alt="World Divine Light Organization"
+            width={110}
+            height={55}
+            style={{
+              width: "110px",
+              height: "auto",
+              objectFit: "contain",
+              filter: "brightness(0) saturate(100%) invert(22%) sepia(30%) saturate(600%) hue-rotate(340deg) brightness(75%)",
+              opacity: 0.9,
+            }}
+          />
+        </div>
 
         {/* Content */}
         <div
@@ -218,23 +242,6 @@ export default function Home() {
             width: "100%",
           }}
         >
-          {/* Logo */}
-          <div style={{ marginBottom: "32px" }}>
-            <Image
-              src="/logo_w.png"
-              alt="World Divine Light Organization"
-              width={160}
-              height={80}
-              style={{
-                width: "160px",
-                height: "auto",
-                objectFit: "contain",
-                filter: "brightness(0) saturate(100%) invert(22%) sepia(30%) saturate(500%) hue-rotate(340deg) brightness(90%)",
-                opacity: 0.85,
-              }}
-            />
-          </div>
-
           <div
             style={{
               display: "inline-flex",
@@ -243,13 +250,14 @@ export default function Home() {
               fontSize: "0.65rem",
               letterSpacing: "0.28em",
               textTransform: "uppercase",
-              color: "#7D5A4F",
+              color: "#4A2E1E",
               marginBottom: "20px",
+              fontWeight: 600,
             }}
           >
-            <span style={{ width: "24px", height: "1px", background: "#7D5A4F", display: "block" }} />
+            <span style={{ width: "24px", height: "1px", background: "#4A2E1E", display: "block", opacity: 0.7 }} />
             World Divine Light Organization
-            <span style={{ width: "24px", height: "1px", background: "#7D5A4F", display: "block" }} />
+            <span style={{ width: "24px", height: "1px", background: "#4A2E1E", display: "block", opacity: 0.7 }} />
           </div>
 
           <h1
@@ -258,24 +266,25 @@ export default function Home() {
               fontSize: "clamp(2.8rem, 7vw, 5.5rem)",
               fontWeight: 400,
               lineHeight: 1.15,
-              color: "#3A2518",
+              color: "#180C04",
               marginBottom: "24px",
               letterSpacing: "-0.01em",
+              textShadow: "0 1px 4px rgba(255,255,255,0.4)",
             }}
           >
             Divine Light
             <br />
-            <em style={{ fontStyle: "italic", color: "#7D5A4F" }}>Basic Seminar</em>
+            <em style={{ fontStyle: "italic", color: "#6B2E18" }}>Basic Seminar</em>
           </h1>
 
           <p
             style={{
               fontSize: "clamp(1rem, 2vw, 1.15rem)",
-              color: "#5A3D2E",
+              color: "#2E1608",
               lineHeight: 1.9,
               maxWidth: "560px",
               margin: "0 auto 48px",
-              fontWeight: 300,
+              fontWeight: 400,
             }}
           >
             A transformative 3-day journey into the Art of Divine Light —
@@ -919,45 +928,31 @@ export default function Home() {
           </p>
           <div style={{ display: "flex", gap: "16px", justifyContent: "center", flexWrap: "wrap" }}>
             <a
-              href="mailto:takayamak44@worlddivinelight.org"
+              href="https://worlddivinelight.org/seminar/"
+              target="_blank"
+              rel="noopener noreferrer"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
-                gap: "8px",
-                padding: "16px 44px",
+                gap: "10px",
+                padding: "18px 52px",
                 background: "#7D5A4F",
                 color: "#FAF5F0",
-                fontSize: "0.78rem",
-                letterSpacing: "0.16em",
+                fontSize: "0.88rem",
+                letterSpacing: "0.12em",
                 textTransform: "uppercase",
                 textDecoration: "none",
                 borderRadius: "4px",
-                fontWeight: 500,
-                minHeight: "52px",
+                fontWeight: 600,
+                minHeight: "56px",
+                boxShadow: "0 4px 20px rgba(125,90,79,0.35)",
               }}
             >
-              Contact Us
-            </a>
-            <a
-              href="https://worlddivinelight.org"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "8px",
-                padding: "16px 44px",
-                background: "transparent",
-                color: "#4A2E1E",
-                border: "1.5px solid #7D5A4F",
-                fontSize: "0.78rem",
-                letterSpacing: "0.16em",
-                textTransform: "uppercase",
-                textDecoration: "none",
-                borderRadius: "4px",
-                fontWeight: 500,
-                minHeight: "52px",
-              }}
-            >
-              Back to Home
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
+                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
+              </svg>
+              セミナーに申し込む
             </a>
           </div>
 
